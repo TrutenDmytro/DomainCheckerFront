@@ -1,0 +1,32 @@
+
+body {
+  padding: 20px;
+  margin: 0;
+}
+
+.domain-card {
+  transition: border-color 0.2s;
+  border: 1px solid #424b57;
+}
+
+.domain-card .p-card-content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.domain-card:hover {
+  border: 1px solid var(--primary-500);
+}
+
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.p-menuitem-icon,
+.p-menuitem-text {
+  color: var(--red-500);
+}
