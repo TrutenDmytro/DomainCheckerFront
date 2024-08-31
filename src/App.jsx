@@ -32,10 +32,10 @@ function App() {
   const fetchData = async () => {
     try {
       const mainResponse = await axios.get(
-        "http://3.75.158.163:10000/api/get-domains"
+        "https://domaincheckerback.onrender.com/api/get-domains"
       );
       const autoResponse = await axios.get(
-        "http://3.75.158.163:10000/api/get-auto"
+        "https://domaincheckerback.onrender.com/api/get-auto"
       );
       setData(mainResponse.data);
       setChecked(autoResponse.data[0].is_auto_enabled);
@@ -58,7 +58,7 @@ function App() {
       try {
         const URL = `https://${domain}/`;
         const response = await axios.post(
-          "http://3.75.158.163:10000/api/manual-check",
+          "https://domaincheckerback.onrender.com/api/manual-check",
           { url: URL, domainID: domainID }
         );
         console.log(response);
@@ -81,7 +81,7 @@ function App() {
 
   const handleAutoCheckDomain = async (value) => {
     const response = await axios.post(
-      "http://3.75.158.163:10000/api/auto-check",
+      "https://domaincheckerback.onrender.com/api/auto-check",
       {is_auto_enabled: value}
     );
     console.log(response);
@@ -95,7 +95,7 @@ function App() {
     try {
       setIsDomainInputInvalid(false);
       const response = await axios.post(
-        "http://3.75.158.163:10000/api/add-domain",
+        "https://domaincheckerback.onrender.com/api/add-domain",
         {
           domain: domainInputValue,
           created_at: new Date().toISOString(),
@@ -118,7 +118,7 @@ function App() {
     }));
     try {
       const response = await axios.delete(
-        "http://3.75.158.163:10000/api/delete-domain",
+        "https://domaincheckerback.onrender.com/api/delete-domain",
         { data: { domainID: selectedDomain } }
       );
       console.log(response);
